@@ -40,6 +40,7 @@
             this.lblFiltroavanzado = new System.Windows.Forms.Label();
             this.txtFiltroavanzado = new System.Windows.Forms.TextBox();
             this.btnFiltro = new System.Windows.Forms.Button();
+            this.btnVerDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(257, 382);
+            this.btnModificar.Location = new System.Drawing.Point(208, 382);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(133, 39);
             this.btnModificar.TabIndex = 3;
@@ -90,7 +91,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(507, 382);
+            this.btnEliminar.Location = new System.Drawing.Point(401, 382);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(133, 39);
             this.btnEliminar.TabIndex = 4;
@@ -161,11 +162,22 @@
             this.btnFiltro.UseVisualStyleBackColor = true;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
+            // btnVerDetalle
+            // 
+            this.btnVerDetalle.Location = new System.Drawing.Point(575, 390);
+            this.btnVerDetalle.Name = "btnVerDetalle";
+            this.btnVerDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnVerDetalle.TabIndex = 12;
+            this.btnVerDetalle.Text = "Ver Detalle";
+            this.btnVerDetalle.UseVisualStyleBackColor = true;
+            this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 532);
+            this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.btnFiltro);
             this.Controls.Add(this.txtFiltroavanzado);
             this.Controls.Add(this.lblFiltroavanzado);
@@ -203,6 +215,7 @@
         private System.Windows.Forms.Label lblFiltroavanzado;
         private System.Windows.Forms.TextBox txtFiltroavanzado;
         private System.Windows.Forms.Button btnFiltro;
+        private System.Windows.Forms.Button btnVerDetalle;
     }
 }
 

@@ -14,7 +14,7 @@ namespace TP_INTEGRADOR_SIRYJ
 {
     public partial class frmNuevoArticulo : Form
     {
-        
+
         private Articulo articulo = null;
         public frmNuevoArticulo()
         {
@@ -36,10 +36,10 @@ namespace TP_INTEGRADOR_SIRYJ
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
+
             ArticuloNegocio negocio = new ArticuloNegocio();
 
-            try 
+            try
             {
                 if (articulo == null)
                 {
@@ -65,12 +65,12 @@ namespace TP_INTEGRADOR_SIRYJ
 
 
                 this.Close();
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-           
+
         }
 
         private void frmNuevoArticulo_Load(object sender, EventArgs e)
