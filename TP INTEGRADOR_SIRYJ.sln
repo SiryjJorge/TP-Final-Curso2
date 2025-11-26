@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP INTEGRADOR_SIRYJ", "TP INTEGRADOR_SIRYJ.csproj", "{A1322DCF-97B0-4D7F-9E4F-FF182ABD3A3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "..\dominio\dominio.csproj", "{0675ED2C-AFD2-4B2B-BC00-0FAFF14565BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "..\negocio\negocio.csproj", "{A939C4DD-AC19-4FCB-9F8F-41B729F4DED5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1322DCF-97B0-4D7F-9E4F-FF182ABD3A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1322DCF-97B0-4D7F-9E4F-FF182ABD3A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1322DCF-97B0-4D7F-9E4F-FF182ABD3A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1322DCF-97B0-4D7F-9E4F-FF182ABD3A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0675ED2C-AFD2-4B2B-BC00-0FAFF14565BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0675ED2C-AFD2-4B2B-BC00-0FAFF14565BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0675ED2C-AFD2-4B2B-BC00-0FAFF14565BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0675ED2C-AFD2-4B2B-BC00-0FAFF14565BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A939C4DD-AC19-4FCB-9F8F-41B729F4DED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A939C4DD-AC19-4FCB-9F8F-41B729F4DED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A939C4DD-AC19-4FCB-9F8F-41B729F4DED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A939C4DD-AC19-4FCB-9F8F-41B729F4DED5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {002EA176-3872-4DBA-8AAD-60F11443DDDC}
+	EndGlobalSection
+EndGlobal
