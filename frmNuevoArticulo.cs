@@ -24,6 +24,14 @@ namespace TP_INTEGRADOR_SIRYJ
         public frmNuevoArticulo(Articulo articulo)
         {
             InitializeComponent();
+            lblVal1.Visible = false;
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            
+
             this.articulo = articulo;
             Text = "Modificar Artículo";
         }

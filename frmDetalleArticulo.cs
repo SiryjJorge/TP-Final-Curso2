@@ -14,7 +14,7 @@ namespace TP_INTEGRADOR_SIRYJ
 {
     public partial class frmDetalleArticulo : Form
     {
-        private Articulo articulo = null;
+        private Articulo articulo;
         public frmDetalleArticulo()
         {
             InitializeComponent();
@@ -33,10 +33,7 @@ namespace TP_INTEGRADOR_SIRYJ
             MarcaNegocio marca = new MarcaNegocio();
 
             try
-            {
-                
-                if (articulo != null)
-                {
+            {              
                     txtId.Text = articulo.Id.ToString();
                     txtDescripcion.Text = articulo.Descripcion;
                     txtNombre.Text = articulo.Nombre;
@@ -45,7 +42,6 @@ namespace TP_INTEGRADOR_SIRYJ
                     txtMarca.Text = articulo.Marca.Descripcion;
                     txtCategoria.Text = articulo.Categoria.Descripcion;
 
-                }
             }
             catch (Exception ex)
             {

@@ -40,6 +40,7 @@ namespace TP_INTEGRADOR_SIRYJ
                 dgvArticulos.Columns["Id"].Visible = false;
                 dgvArticulos.Columns["ImagenUrl"].Visible = false;
                 //dgvArticulos.Columns["Descripcion"].Visible = false;
+                dgvArticulos.Columns["Categoria"].Visible = false;
 
                 cargarImagen(listaArticulo[0].ImagenUrl);
             }
@@ -79,15 +80,25 @@ namespace TP_INTEGRADOR_SIRYJ
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Articulo seleccionado;
-            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             
-            frmNuevoArticulo modificar = new frmNuevoArticulo(seleccionado);
-            modificar.ShowDialog();
-            cargar();
-        }
+            
+            try
+            {
+                if (dgvArticulos.CurrentRow == null)
+                {
+                    MessageBox.Show("Seleccione un artículo para MODIFICAR.");
+                    return;
+                }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmNuevoArticulo modificar = new frmNuevoArticulo(seleccionado);
+                modificar.ShowDialog();
+                cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             
         }
 
@@ -98,7 +109,14 @@ namespace TP_INTEGRADOR_SIRYJ
 
             try
             {
+                if (dgvArticulos.CurrentRow == null)
+                {
+                    MessageBox.Show("Seleccione un artículo para ELIMINAR.");
+                    return;
+                }
+
                 DialogResult respuesta = MessageBox.Show("¿desea ELIMINAR el artículo seleccionado?", "Eliminar artículo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                     
                 if (respuesta == DialogResult.Yes)
                 {
                     seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
@@ -132,24 +150,6 @@ namespace TP_INTEGRADOR_SIRYJ
             }
         }
 
-        private void btnFiltro_Click(object sender, EventArgs e)
-        {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            try
-            {
-                string campo = cboCampo.SelectedItem.ToString();
-                string criterio = cboCriterio.SelectedItem.ToString();
-                string filtro = txtFiltroavanzado.Text;
-                dgvArticulos.DataSource = negocio.filtrar(campo,criterio,filtro);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        
-        }
-
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
             Articulo seleccionado;
@@ -158,6 +158,57 @@ namespace TP_INTEGRADOR_SIRYJ
             frmDetalleArticulo detalle = new frmDetalleArticulo(seleccionado);
             detalle.ShowDialog();
             cargar();
+        }
+
+        private bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex == -1 || cboCriterio.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un Campo y un Criterio para buscar.");
+                return true;
+            }
+            if (cboCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (!(soloNumeros(txtFiltroavanzado.Text)))
+                {
+                    MessageBox.Show("Ingrese solo números para buscar por PRECIO.");
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                {
+                    return false;
+                }
+            }         
+            return true;
+        }
+        
+        private void btnFiltro_Click_1(object sender, EventArgs e)
+        {
+                   
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                if (validarFiltro())
+                    return;
+
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroavanzado.Text;
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
