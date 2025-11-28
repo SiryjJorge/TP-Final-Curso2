@@ -19,6 +19,7 @@ namespace TP_INTEGRADOR_SIRYJ
         public frmNuevoArticulo()
         {
             InitializeComponent();
+            Text = "Nuevo Artículo";
         }
 
         public frmNuevoArticulo(Articulo articulo)
@@ -29,8 +30,7 @@ namespace TP_INTEGRADOR_SIRYJ
             label2.Visible = false;
             label3.Visible = false;
             label4.Visible = false;
-            label5.Visible = false;
-            
+            label5.Visible = false;           
 
             this.articulo = articulo;
             Text = "Modificar Artículo";
@@ -40,6 +40,43 @@ namespace TP_INTEGRADOR_SIRYJ
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private bool validarNuevo()
+        {
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un Nombre.");
+                return true;
+            }
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                MessageBox.Show("Por favor, ingrese una Descripción.");
+                return true;
+            }
+            if (string.IsNullOrEmpty(txtPrecio.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un Precio");
+                return true;
+            }
+            if (!(soloNumeros(txtPrecio.Text)))
+            {
+                MessageBox.Show("Ingrese solo números en el campo Precio.");
+                return true;
+            }
+            return false;
+        }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)) && caracter != ',')
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -52,6 +89,10 @@ namespace TP_INTEGRADOR_SIRYJ
                 if (articulo == null)
                 {
                     articulo = new Articulo();
+                }
+                if (validarNuevo())
+                {
+                    return;
                 }
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
@@ -88,6 +129,7 @@ namespace TP_INTEGRADOR_SIRYJ
 
             try
             {
+                
                 cboCategoria.DataSource = categoria.listar();
                 cboCategoria.ValueMember = "Id";
                 cboCategoria.DisplayMember = "Descripcion";
