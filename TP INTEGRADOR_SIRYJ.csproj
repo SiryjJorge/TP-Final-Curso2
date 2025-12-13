@@ -98,11 +98,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dominio\dominio.csproj">
+    <ProjectReference Include="dominio\dominio.csproj">
       <Project>{0675ed2c-afd2-4b2b-bc00-0faff14565be}</Project>
       <Name>dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\negocio\negocio.csproj">
+    <ProjectReference Include="negocio\negocio.csproj">
       <Project>{a939c4dd-ac19-4fcb-9f8f-41b729f4ded5}</Project>
       <Name>negocio</Name>
     </ProjectReference>

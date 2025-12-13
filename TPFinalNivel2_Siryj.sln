@@ -5,9 +5,9 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP INTEGRADOR_SIRYJ", "TP INTEGRADOR_SIRYJ.csproj", "{A1322DCF-97B0-4D7F-9E4F-FF182ABD3A3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "..\dominio\dominio.csproj", "{0675ED2C-AFD2-4B2B-BC00-0FAFF14565BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{0675ED2C-AFD2-4B2B-BC00-0FAFF14565BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "..\negocio\negocio.csproj", "{A939C4DD-AC19-4FCB-9F8F-41B729F4DED5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "negocio\negocio.csproj", "{A939C4DD-AC19-4FCB-9F8F-41B729F4DED5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
